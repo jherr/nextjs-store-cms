@@ -1,0 +1,213 @@
+[
+  {
+    "id": 1,
+    "title": "CodeCuff",
+    "price": 9.99,
+    "description": "A simple, yet elegant way to show your love for coding.",
+    "image": "band-1.jpeg",
+    "reviews": [
+      {
+        "id": 1,
+        "rating": 5,
+        "title": "The Code Breaker sneakers are a must-have for any coder looking to step up their game. The sleek black and white design with subtle coding accents make them a stylish addition to any outfit. But it's not just about the looks - these sneakers are also designed with comfort in mind, making them perfect for long coding sessions or casual wear. Overall, the Code Breaker sneakers are a great investment for any coder looking to break some code in style."
+      },
+      {
+        "id": 2,
+        "rating": 4,
+        "title": "Love it, great product."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "BinaryBoost",
+    "price": 49.99,
+    "description": "Boost your coding skills with these sleek sneakers.",
+    "image": "shoe-7.jpeg",
+    "reviews": [
+      {
+        "id": 3,
+        "rating": 5,
+        "title": "Amazing! Can't believe it!"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "CodeCrafters",
+    "price": 39.99,
+    "description": "Craft your code with these stylish sneakers.",
+    "image": "shoe-6.jpeg",
+    "reviews": [
+      {
+        "id": 4,
+        "rating": 5,
+        "title": "Whoa, incredible!"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "DevLink",
+    "price": 9.99,
+    "description": "Link up with other devs with this stylish wristband.",
+    "image": "band-2.jpeg",
+    "reviews": [
+      {
+        "id": 5,
+        "rating": 5,
+        "title": "OMG! I love the DevLink. Huge fan."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "AlgorithmAir",
+    "price": 39.99,
+    "description": "Take your coding to new heights with these sneakers.",
+    "image": "shoe-4.jpeg",
+    "reviews": [
+      {
+        "id": 6,
+        "rating": 4,
+        "title": "These are incredible shoes."
+      },
+      {
+        "id": 7,
+        "rating": 5,
+        "title": "Bought three pairs, wish I bought more."
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "title": "Binary Brigade",
+    "price": 24.99,
+    "description": "Join the Binary Brigade with this stylish t-shirt.",
+    "image": "shirt-3.jpeg",
+    "reviews": [
+      {
+        "id": 8,
+        "rating": 5,
+        "title": "Incredible t-shirt."
+      },
+      {
+        "id": 9,
+        "rating": 3,
+        "title": "Super well made."
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "title": "CodeSole",
+    "price": 39.99,
+    "description": "Solefully designed for the coder in you.",
+    "image": "shoe-2.jpeg",
+    "reviews": [
+      {
+        "id": 10,
+        "rating": 5,
+        "title": "Very comfy shoes."
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "title": "SyntaxStrap",
+    "price": 9.99,
+    "description": "Strap up your wrist with this stylish wristband.",
+    "image": "band-3.jpeg",
+    "reviews": [
+      {
+        "id": 11,
+        "rating": 4,
+        "title": "Neat band, looks sharp."
+      }
+    ]
+  },
+  {
+    "id": 10,
+    "title": "ByteKicks",
+    "price": 39.99,
+    "description": "Kick your coding into high gear with these sneakers.",
+    "image": "shoe-1.jpeg",
+    "reviews": [
+      {
+        "id": 12,
+        "rating": 4,
+        "title": "Who makes shoes that look this good? It's crazy."
+      }
+    ]
+  },
+  {
+    "id": 11,
+    "title": "Byte Me",
+    "price": 34.99,
+    "description": "A fun way to show your love for coding.",
+    "image": "shirt-4.jpeg",
+    "reviews": [
+      {
+        "id": 13,
+        "rating": 5,
+        "title": "Wow what a great shirt that talks about coding."
+      }
+    ]
+  },
+  {
+    "id": 12,
+    "title": "HackHightops",
+    "price": 49.99,
+    "description": "Take your coding to new heights with these sneakers.",
+    "image": "shoe-3.jpeg",
+    "reviews": [
+      {
+        "id": 14,
+        "rating": 5,
+        "title": "I love hightops, and dang these are great."
+      }
+    ]
+  },
+  {
+    "id": 13,
+    "title": "SyntaxSneakers",
+    "price": 49.99,
+    "description": "Sneak your way into coding with these stylish sneakers.",
+    "image": "shoe-5.jpeg",
+    "reviews": [
+      {
+        "id": 15,
+        "rating": 5,
+        "title": "These sneakers are just so cool."
+      }
+    ]
+  },
+  {
+    "id": 14,
+    "title": "Hello World",
+    "price": 19.99,
+    "description": "Say hello to the world with this stylish t-shirt.",
+    "image": "shirt-2.jpeg",
+    "reviews": [
+      {
+        "id": 16,
+        "rating": 5,
+        "title": "Say hello to this shirt!"
+      }
+    ]
+  },
+  {
+    "id": 15,
+    "title": "CodeChrono",
+    "price": 9.99,
+    "description": "Time your code with this stylish wristband.",
+    "image": "band-4.jpeg",
+    "reviews": [
+      {
+        "id": 17,
+        "rating": 5,
+        "title": "What a great band for your watch to show your love for coding!"
+      }
+    ]
+  }
+]
