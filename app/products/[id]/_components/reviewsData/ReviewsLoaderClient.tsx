@@ -1,7 +1,8 @@
 "use client";
 import { useRef } from "react";
+import { type Review } from "@/app/_types";
 
-import { type Review, useReviewsStore } from "./ReviewsProvider";
+import { useReviewsStore } from "./ReviewsProvider";
 
 export default function ReviewsLoaderClient({
   children,

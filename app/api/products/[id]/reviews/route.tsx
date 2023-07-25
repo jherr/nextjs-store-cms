@@ -2,7 +2,12 @@ import { NextResponse } from "next/server";
 
 import products from "../../_data/products.json";
 
-export function GET(_req: Request, { params }: { params: { id: string } }) {
+export async function GET(
+  _req: Request,
+  { params }: { params: { id: string } }
+) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+
   return NextResponse.json(
     products.find((product) => product.id === +params.id)?.reviews
   );

@@ -1,11 +1,7 @@
 "use client";
 import { createContext, useContext } from "react";
 import { create } from "zustand";
-
-export interface Review {
-  id: number;
-  title: string;
-}
+import { type Review } from "@/app/_types";
 
 export const createReviewsStore = () =>
   create<{

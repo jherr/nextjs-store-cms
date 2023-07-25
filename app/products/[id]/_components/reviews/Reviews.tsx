@@ -16,7 +16,7 @@ export default function Reviews() {
       </ul>
       <div className="flex">
         <div className="flex flex-col">
-          <label htmlFor="comment">Comment</label>
+          <label htmlFor="comment">Review</label>
           <input
             id="comment"
             type="text"
@@ -31,6 +31,7 @@ export default function Reviews() {
               ...reviews,
               {
                 id: Math.random(),
+                rating: 4,
                 title,
               },
             ]);

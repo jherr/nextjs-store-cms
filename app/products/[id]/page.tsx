@@ -1,38 +1,48 @@
-import SyncProvider from "./_components/SyncProvider";
-import AsyncProvider from "./_components/reviewsData/ReviewsProvider";
-import Counter from "./_components/Counter";
+import ProductLoader from "./_components/productData/ProductLoader";
+import Title from "./_components/product/Title";
+import Description from "./_components/product/Description";
+
+import ReviewsProvider from "./_components/reviewsData/ReviewsProvider";
 import ReviewsLoader from "./_components/reviewsData/ReviewsLoader";
 import Reviews from "./_components/reviews/Reviews";
-import ReviewCount from "./_components/reviews/ReviewsCount";
+import RatingAverage from "./_components/reviews/RatingAverage";
+
+import Recommended from "./_components/Recommended";
+import ProductImage from "./_components/ProductImage";
 
 import { Suspense } from "react";
 
-export default function ProductPage() {
+export default function ProductPage({
+  params: { id },
+}: {
+  params: { id: string };
+}) {
   return (
     <main>
-      <SyncProvider count={0}>
-        <AsyncProvider>
-          <h1>SyncProvider</h1>
-          <div className="flex">
+      <ProductLoader id={+id}>
+        <ReviewsProvider>
+          <div className="grid grid-cols-[30%_70%]">
+            <ProductImage id={+id} />
             <div>
-              <Counter />
-              <Suspense>
-                <ReviewsLoader>
-                  <Reviews />
-                </ReviewsLoader>
-              </Suspense>
-            </div>
-            <div>
-              <Counter />
-              <Suspense>
-                <ReviewsLoader>
-                  <ReviewCount />
+              <Title />
+              <Description />
+              <Suspense fallback={<div>Loading Reviews...</div>}>
+                <ReviewsLoader id={+id}>
+                  <RatingAverage />
                 </ReviewsLoader>
               </Suspense>
             </div>
           </div>
-        </AsyncProvider>
-      </SyncProvider>
+          <div>
+            <Suspense fallback={<div>Loading Reviews...</div>}>
+              <ReviewsLoader id={+id}>
+                <Reviews />
+              </ReviewsLoader>
+            </Suspense>
+          </div>
+          <Recommended id={+id} />
+        </ReviewsProvider>
+      </ProductLoader>
     </main>
   );
 }
