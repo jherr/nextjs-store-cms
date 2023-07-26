@@ -1,5 +1,5 @@
 "use client";
-import { createContext, useContext } from "react";
+import { createContext, useContext, use } from "react";
 import { create } from "zustand";
 
 export const createProductStore = () =>
@@ -27,17 +27,17 @@ export const useProductContext = () => {
   return context;
 };
 
-export default function SyncProvider({
+export default function ProductProvider({
   children,
-  id,
-  title,
-  description,
+  productReq,
 }: {
+  productReq: Promise<{
+    title: string;
+    description: string;
+  }>;
   children: React.ReactNode;
-  id: number;
-  title: string;
-  description: string;
 }) {
+  const { title, description } = use(productReq);
   const useSync = createProductStore();
   useSync.setState({ title, description });
 

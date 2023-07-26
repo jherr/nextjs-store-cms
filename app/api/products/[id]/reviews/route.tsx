@@ -6,7 +6,7 @@ export async function GET(
   _req: Request,
   { params }: { params: { id: string } }
 ) {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 
   return NextResponse.json(
     products.find((product) => product.id === +params.id)?.reviews

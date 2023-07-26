@@ -17,30 +17,31 @@ export default function ProductPage({
 }: {
   params: { id: string };
 }) {
+  const productId = +id;
+  const reviewsReq = fetch(`http://localhost:3000/api/products/${id}/reviews`, {
+    cache: "no-cache",
+  }).then((res) => res.json());
+
   return (
     <main>
-      <ProductLoader id={+id}>
-        <ReviewsProvider>
+      <ProductLoader id={productId}>
+        <ReviewsProvider reviewsReq={reviewsReq}>
           <div className="grid grid-cols-[30%_70%]">
-            <ProductImage id={+id} />
-            <div>
+            <ProductImage id={productId} />
+            <div className="ml-4">
               <Title />
               <Description />
               <Suspense fallback={<div>Loading Reviews...</div>}>
-                <ReviewsLoader id={+id}>
-                  <RatingAverage />
-                </ReviewsLoader>
+                <RatingAverage />
               </Suspense>
             </div>
           </div>
           <div>
             <Suspense fallback={<div>Loading Reviews...</div>}>
-              <ReviewsLoader id={+id}>
-                <Reviews />
-              </ReviewsLoader>
+              <Reviews />
             </Suspense>
           </div>
-          <Recommended id={+id} />
+          <Recommended id={productId} />
         </ReviewsProvider>
       </ProductLoader>
     </main>

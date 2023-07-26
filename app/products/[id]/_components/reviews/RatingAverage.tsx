@@ -1,9 +1,9 @@
 "use client";
-import { useReviewsStore } from "../reviewsData/ReviewsProvider";
+import { use } from "react";
+import { useReviewsContext } from "../reviewsData/ReviewsProvider";
 
 export default function RatingAverage() {
-  const useReviews = useReviewsStore();
-  const { reviews } = useReviews();
+  const reviews = use(useReviewsContext()!) ?? [];
 
   if (!reviews) return null;
 

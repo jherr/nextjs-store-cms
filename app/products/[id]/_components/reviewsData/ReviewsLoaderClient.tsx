@@ -1,23 +1,16 @@
 "use client";
-import { useRef } from "react";
+import { useState, use } from "react";
 import { type Review } from "@/app/_types";
 
-import { useReviewsStore } from "./ReviewsProvider";
+import { useReviewsContext } from "./ReviewsProvider";
 
 export default function ReviewsLoaderClient({
   children,
-  reviews,
+  reviewsReq,
 }: {
   children: React.ReactNode;
-  reviews: Review[];
+  reviewsReq: Promise<Review[]>;
 }) {
-  const useReviews = useReviewsStore();
-  const { setReviews } = useReviews();
-
-  const loaded = useRef(false);
-  if (!loaded.current) {
-    setReviews(reviews);
-    loaded.current = true;
-  }
+  const reviews = use(useReviewsContext()!);
   return <>{children}</>;
 }

@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ProductProvider from "./ProductProvider";
 
 export default async function ReviewsLoader({
@@ -7,18 +8,16 @@ export default async function ReviewsLoader({
   children: React.ReactNode;
   id: number;
 }) {
-  const productReq = await fetch(`http://localhost:3000/api/products/${id}`, {
+  const productReq = fetch(`http://localhost:3000/api/products/${id}`, {
     cache: "no-cache",
-  });
-  const product = await productReq.json();
+  }).then((res) => res.json());
 
   return (
-    <ProductProvider
-      id={id}
-      title={product.title}
-      description={product.description}
-    >
-      {children}
-    </ProductProvider>
+    <div>
+      <div className="text-5xl">You Should See me</div>
+      <Suspense>
+        <ProductProvider productReq={productReq}>{children}</ProductProvider>
+      </Suspense>
+    </div>
   );
 }

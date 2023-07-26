@@ -1,11 +1,11 @@
 "use client";
-import { useState } from "react";
-import { useReviewsStore } from "../reviewsData/ReviewsProvider";
+import { useState, use } from "react";
+import { useReviewsContext } from "../reviewsData/ReviewsProvider";
 
 export default function Reviews() {
+  const reviews = use(useReviewsContext()!) ?? [];
+
   const [title, setTitle] = useState("");
-  const useReviews = useReviewsStore();
-  const { reviews, setReviews } = useReviews();
 
   return (
     <>
@@ -14,31 +14,25 @@ export default function Reviews() {
           <li key={review.id}>{review.title}</li>
         ))}
       </ul>
-      <div className="flex">
-        <div className="flex flex-col">
-          <label htmlFor="comment">Review</label>
+      <div className="flex gap-3 items-center">
+        <div className="flex flex-col flex-grow">
+          <label htmlFor="comment">Review Text</label>
           <input
             id="comment"
             type="text"
             value={title}
             onChange={(evt) => setTitle(evt.target.value)}
-            className="text-black"
+            className="bg-gray-800 text-white border border-gray-700 rounded-lg py-2 px-4 block w-full leading-5 focus:outline-none focus:border-blue-500 focus:ring-blue-500"
           />
         </div>
-        <button
-          onClick={() => {
-            setReviews([
-              ...reviews,
-              {
-                id: Math.random(),
-                rating: 4,
-                title,
-              },
-            ]);
-          }}
-        >
-          Add
-        </button>
+        <div>
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+            onClick={() => {}}
+          >
+            Add Review
+          </button>
+        </div>
       </div>
     </>
   );

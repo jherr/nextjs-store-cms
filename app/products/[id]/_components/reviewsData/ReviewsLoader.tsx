@@ -1,4 +1,6 @@
+import { Suspense } from "react";
 import ReviewsLoaderClient from "./ReviewsLoaderClient";
+import { useReviewsContext } from "./ReviewsProvider";
 
 export default async function ReviewsLoader({
   children,
@@ -7,15 +9,11 @@ export default async function ReviewsLoader({
   children: React.ReactNode;
   id: number;
 }) {
-  const reviewsReq = await fetch(
-    `http://localhost:3000/api/products/${id}/reviews`,
-    {
-      cache: "no-cache",
-    }
-  );
-  const reviews = await reviewsReq.json();
-
   return (
-    <ReviewsLoaderClient reviews={reviews}>{children}</ReviewsLoaderClient>
+    <Suspense>
+      <ReviewsLoaderClient reviewsReq={reviewsReq}>
+        {children}
+      </ReviewsLoaderClient>
+    </Suspense>
   );
 }
