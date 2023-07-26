@@ -14,7 +14,6 @@ export default async function ReviewsLoader({
 
   return (
     <div>
-      <div className="text-5xl">You Should See me</div>
       <Suspense>
         <ProductProvider productReq={productReq}>{children}</ProductProvider>
       </Suspense>

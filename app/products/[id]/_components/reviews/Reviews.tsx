@@ -2,7 +2,11 @@
 import { useState, use } from "react";
 import { useReviewsContext } from "../reviewsData/ReviewsProvider";
 
-export default function Reviews() {
+export default function Reviews({
+  addReview,
+}: {
+  addReview: (title: string, rating: number) => void;
+}) {
   const reviews = use(useReviewsContext()!) ?? [];
 
   const [title, setTitle] = useState("");
@@ -28,7 +32,9 @@ export default function Reviews() {
         <div>
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
-            onClick={() => {}}
+            onClick={() => {
+              addReview(title, 5);
+            }}
           >
             Add Review
           </button>
